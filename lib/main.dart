@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   : (_medium ? _height / 3.75 : _height / 3.5),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.pinkAccent, Colors.green],
+                  colors: [Colors.indigo[800], Colors.purple[900],Colors.deepOrange[800]],
                 ),
               ),
             ),
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   : (_medium ? _height / 4.25 : _height / 4),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.pinkAccent, Colors.green],
+                  colors: [Colors.pinkAccent, Colors.white],
                 ),
               ),
             ),
@@ -183,6 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
       keyboardType: TextInputType.emailAddress,
       textEditingController: emailController,
       icon: Icons.person,
+      obscureText: false,
       hint: "Username",
     );
   }
@@ -232,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       onPressed: () {
-        print("Routing to your account");
+        print("Button Sign In Pressed");
         _login();
       },
       textColor: Colors.white,
@@ -243,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           gradient: LinearGradient(
-            colors: [Colors.pinkAccent, Colors.green],
+            colors: [Colors.indigo[800], Colors.purple[900],Colors.deepOrange[800]],
           ),
         ),
         padding: const EdgeInsets.all(12.0),
