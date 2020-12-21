@@ -6,9 +6,9 @@ class PlusCalculationPages extends StatefulWidget {
 }
 
 class _PlusCalculationPagesState extends State<PlusCalculationPages> {
-  int valueA;
-  int valueB;
-  int result;
+  int valueA = 0;
+  int valueB = 0;
+  int _result = 0;
 
   var _controllervalueA = TextEditingController();
   var _controllervalueB = TextEditingController();
@@ -23,8 +23,8 @@ class _PlusCalculationPagesState extends State<PlusCalculationPages> {
             form(),
             SizedBox(height: 20),
             buttonCalculate(),
-            SizedBox(height: 20),
-            TextFormField(
+            SizedBox(height: 100),
+            /*  TextFormField(
               controller: _controllervalueA,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
@@ -33,8 +33,9 @@ class _PlusCalculationPagesState extends State<PlusCalculationPages> {
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide(color: Colors.white)),
-              ),
-            ),
+              ),z
+            ),*/
+            Text("Total  = ${_result}", style: TextStyle(fontSize: 30))
           ],
         ),
       ),
@@ -113,7 +114,7 @@ class _PlusCalculationPagesState extends State<PlusCalculationPages> {
   void calculate() {
     int numberA = int.parse(_controllervalueA.text.toString());
     int numberB = int.parse(_controllervalueB.text.toString());
-    result = numberA + numberB;
-    print("Hasil Perhitungan A + B adalah $result");
+    _result = numberA + numberB;
+    print("Hasil Perhitungan A + B adalah $_result");
   }
 }

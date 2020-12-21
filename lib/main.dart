@@ -63,11 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: <Widget>[
               clipShape(),
+              /* SizedBox(height: _height / 20),*/
               welcomeTextRow(),
               signInTextRow(),
               form(),
               /*forgetPassTextRow(),*/
-              SizedBox(height: _height / 12),
+              SizedBox(height: _height / 20),
               buttonSignIn(),
             ],
           ),
@@ -82,15 +83,16 @@ class _MyHomePageState extends State<MyHomePage> {
         Opacity(
           opacity: 0.75,
           child: ClipPath(
-            clipper: CustomShapeClipper(),
+            clipper: CustomShapeClipper2(),
             child: Container(
               height: _large
                   ? _height / 4
                   : (_medium ? _height / 3.75 : _height / 3.5),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                color: Colors.indigo[800],
+                /*gradient: LinearGradient(
                   colors: [Colors.indigo[800], Colors.purple[900],Colors.deepOrange[800]],
-                ),
+                ),*/
               ),
             ),
           ),
@@ -104,9 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ? _height / 4.5
                   : (_medium ? _height / 4.25 : _height / 4),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.pinkAccent, Colors.white],
-                ),
+                color: Colors.purpleAccent,
+                /*gradient: LinearGradient(
+                  colors: [Colors.pinkAccent, Colors.amberAccent],
+                ),*/
               ),
             ),
           ),
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ? _height / 30
                   : (_medium ? _height / 25 : _height / 20)),
           child: Image.asset(
-            'assets/images/logo_flutter.jpg',
+            'assets/images/logo_flutter.png',
             height: _height / 3.5,
             width: _width / 3.5,
           ),
@@ -129,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget welcomeTextRow() {
     return Container(
-      margin: EdgeInsets.only(left: _width / 20, top: _height / 100),
+      margin: EdgeInsets.only(left: _width / 20, top: _height / 50),
       child: Row(
         children: <Widget>[
           Text(
@@ -244,7 +247,11 @@ class _MyHomePageState extends State<MyHomePage> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           gradient: LinearGradient(
-            colors: [Colors.indigo[800], Colors.purple[900],Colors.deepOrange[800]],
+            colors: [
+              Colors.indigo[800],
+              Colors.purple[900],
+              Colors.deepOrange[800]
+            ],
           ),
         ),
         padding: const EdgeInsets.all(12.0),
